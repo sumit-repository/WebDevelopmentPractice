@@ -1,32 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Forms</title>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width initial-scale=1.0"/>
-    </head>
-    <body>
-        <h2>Forms</h2>
-        <form>
-            <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname" value="John"><br>
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname" value="Doe"><br>
-            <button type="button" onclick="myfunc()">Button</button>
-        </form>
 
-        <script>
-            function myfunc() {
-                alert(document.getElementById("fname").value+"    "+document.getElementById("lname").value);
-                // var buttons=document.getElementsByName("language");
-                // for(var i=0; i<buttons.length; i++) {
-                //     if(buttons[i].checked) {
-                //         alert('Selected: ' + buttons[i].value);
-                //         break;
-                //     }
-                // }
-            }
-        </script>
+<head>
+	<title>Forms</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.offset-nameLabel {
+			margin-left:20px;
+			margin-right:10px;
+			width: 100px;
+			display: inline-block;
+		}
+		.textBoxMargin {
+			margin-bottom:5px;
+			border: 0.5px solid black;
+			padding: 3px;
+			margin-left: 10px;
+			width: 30%;
 
-    </body>
+		}
+		::placeholder {
+			opacity:0.3;
+		}
+		div {
+			padding: 5px;
+		}
+		h2 {
+			text-align: center;
+		}
+		body {
+			background-image: url('https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=826&t=st=1705578593~exp=1705579193~hmac=2e2e222fc46398515f65554efe4b145061d17a0f6e38f8ceafb53e7ff7671159');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: 50% 100%;
+			font-family:Helvetica;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<h2>Personal Information Form</h2>
+
+	<!-- <form style="border:1px solid black; padding:5px; color:#638889; border-radius:10px; background:#F9EFDB; opacity:5">-->
+		<!-- Add: display:inline-block; in form-style for border to just enclose the text and not the screen -->
+		<form>
+		<!--input language-->
+		<div><strong>Input Language:</strong>
+			<input type="radio" id="english" name="inputLanguage" value="English" checked>
+			<label for="english">English</label>
+			<input type="radio" id="french" name="inputLanguage" value="French">
+			<label for="french">French</label>
+		</div>
+
+		<!-- Name -->
+		<div style="display: inline-flex; width:100%"><strong>Name:</strong>
+			<!-- <label for="fname" class="offset-nameLabel">First Name:</label> -->
+			<input type="text" name="fname" id="fname" placeholder="FirstName*" class="textBoxMargin" required>
+			<!-- <label for="mname" class="offset-nameLabel">Middle Name:</label> -->
+			<input type="text" name="mname" id="mname" placeholder="MiddleName" class="textBoxMargin">
+			<!-- <label for="lname" class="offset-nameLabel">Last Name:</label> -->
+			<input type="text" name="lname" id="lname" placeholder="LastName*" class="textBoxMargin" required>
+		</div>
+
+		<!-- Date -->
+		<div>
+		</div>
+
+
+	</form>
+
+</body>
+
 </html>
