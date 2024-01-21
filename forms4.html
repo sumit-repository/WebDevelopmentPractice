@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+        <style>
+            ::placeholder {
+                opacity: .5;
+            }
+            .typeColumn {
+                width: 25%;
+                font-weight: bold;
+            }
+            .detailsColumn {
+                width: 75%;
+            }
+            table {
+                margin-left: auto;
+                margin-right: auto;
+                padding: 3px;
+                border-collapse: collapse;
+            }
+            input {
+                margin: 1px;;
+            }
+            body {
+                background-image: url('https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=826&t=st=1705578593~exp=1705579193~hmac=2e2e222fc46398515f65554efe4b145061d17a0f6e38f8ceafb53e7ff7671159');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: 50% 100%;
+                background-size:30%;
+                font-family:Helvetica;
+            }
+            td {
+                padding: 5px;
+            }
+            img {
+                width: 7.5%;
+                height: 7.5%;
+                vertical-align: middle;
+            }
+            .boxSizing {
+                border: none;
+                border-bottom: 1px solid silver; 
+                height:20px;
+                width: 25%;
+            }
+        </style>
+    </head>
+
+    <body>        
+        <center>
+            <h2 style="display: inline-block; vertical-align: middle;">
+            <img src="https://www.internetmatters.org/connecting-safely-online/wp-content/uploads/sites/2/2020/06/CYP-Personal-Info.png" atl="Personal Information Form">
+            Personal Information Form</h2>
+            <br><hr style="width: 50%;""><br>
+        </center>
+        <form>
+            <table>
+                <tr>
+                    <td class="typeColumn">Language</td>
+                    <td>
+                        <input type="radio" id="english" name="inputLanguage" value="English" checked>
+                        <label for="english">English</label>
+                        <input type="radio" id="french" name="inputLanguage" value="French">
+                        <label for="french">French</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="typeColumn">Name</td>
+                    <td class="detailsColumn">
+                        <input type="text" id="fname" name="fname" placeholder="First Name" class="boxSizing">
+                        <input type="text" id="mname" name="mname" placeholder="Middle Name" class="boxSizing">
+                        <input type="text" id="lname" name="lname" placeholder="Last Name" class="boxSizing">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="typeColumn">Date of Birth</td>
+                    <td><input type="date" name="dob" id="dob" class="boxSizing"></td>
+                </tr>
+                <tr>
+                    <td class="typeColumn">Security Question</td>
+                    <td>
+                        <select id="securityQuestion" name="securityQuestion" class="boxSizing" style="width:auto">
+                            <option value="question1">Which is your favourite country?</option>
+                            <option value="question2">Which is your favourite pet?</option>
+                            <option value="question3">Which is your favourite food?</option>
+                        </select><br>
+                        <input type="password" id="answer" class="boxSizing"  placeholder="answer here" style="width:75%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="typeColumn">Phone Number</td>
+                    <td>
+                        <input type="tel" name="phoneNo" id="phoneNo" class="boxSizing">    
+                    </td>
+                </tr>
+                <tr><td colspan="2" style="text-align: center;">
+                    <input type="submit" id="submitBtn"  style="margin-right:10%; width:40%; border: 1px solid silver; height:20px;" onclick="myfunc()">
+                    <input type="reset" id="resetBtn" style="width:40%; border: 1px solid silver; height:20px;">
+                </td></tr>
+            </table>
+        </form>
+
+        <script>
+            function myfunc() {
+                alert(document.getElementById('answer').value);
+            }
+        </script>
+    </body>
+
+</html>
